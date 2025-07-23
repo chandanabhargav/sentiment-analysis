@@ -1,0 +1,21 @@
+# Byte-compiled / cache
+__pycache__/
+*.so
+*.pyd
+
+# Virtual environments
+.env/
+
+# Jupyter Notebook checkpoints
+.ipynb_checkpoints/
+
+# PyCharm / VSCode settings
+.idea/
+.vscode/
+
+# OS-specific files
+.DS_Store
+
+# Model or large files
+*.pkl
+*.h5
