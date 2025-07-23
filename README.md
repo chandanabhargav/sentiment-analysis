@@ -1,6 +1,6 @@
-# 🧠 Sentiment Analysis API (DistilBERT + FastAPI)
+# 🧠 Sentiment Analysis App (DistilBERT + Streamlit)
 
-A production-ready **sentiment classification API** built using HuggingFace Transformers and FastAPI.  
+A production-ready **sentiment classification web app** built using HuggingFace Transformers and Streamlit.  
 It classifies text as **positive** or **negative** using a pre-trained transformer model.
 
 ---
@@ -9,8 +9,8 @@ It classifies text as **positive** or **negative** using a pre-trained transform
 
 - ✅ Uses `distilbert-base-uncased-finetuned-sst-2-english`
 - ✅ HuggingFace pipeline — no training required
-- ✅ FastAPI endpoint for easy integration
-- ✅ Supports deployment on Render
+- ✅ Streamlit frontend — easy to use and deploy
+- ✅ Hosted on Streamlit Cloud (free)
 - ✅ Jupyter-tested with IMDb reviews
 
 ---
@@ -24,35 +24,20 @@ It classifies text as **positive** or **negative** using a pre-trained transform
 
 ---
 
-## 🧾 Example Input & Output
+## 🧾 Example Usage
 
-### 🔗 Endpoint
+### 🔗 App URL
 
-```bash
-POST /predict
+🌐 [Live App](https://sentiment-analysis-14.streamlit.app)
 
-curl -X POST http://localhost:8000/predict \
-  -H "Content-Type: application/json" \
-  -d '{"text": "I love this!"}'
+### ✅ Input
 
-```
+Type your sentence into the text area and click "Predict Sentiment".
 
-### ✅ Input JSON
+### 📤 Output
 
-```json
-{
-  "text": "I absolutely loved this movie!"
-}
-```
-
-### 📤 Output JSON
-
-```json
-{
-  "label": "POSITIVE",
-  "score": 0.998
-}
-```
+- Label: `POSITIVE` or `NEGATIVE`
+- Confidence Score: e.g. `0.998`
 
 ---
 
@@ -62,24 +47,25 @@ curl -X POST http://localhost:8000/predict \
 # 1. Install dependencies
 pip install -r requirements.txt
 
-# 2. Run the FastAPI app
-uvicorn app.main:app --reload
+# 2. Run the Streamlit app
+streamlit run app.py
 ```
 
-Swagger UI available at:  
-📍 `http://localhost:8000/docs`
+The app will be available at:  
+📍 `http://localhost:8501`
 
 ---
 
 ## 📁 Project Structure
 
 ```
-sentiment-api/
-├── app/
-│   └── main.py               # FastAPI app
+sentiment-streamlit/
+├── app.py                  # Streamlit app
 ├── requirements.txt
 ├── README.md
-└── test.ipynb                # Jupyter notebook with analysis
+├── test.ipynb              # Jupyter notebook with analysis
+└── screenshots/
+    └── sentiment_demo.png
 ```
 
 ---
@@ -97,22 +83,12 @@ classifier("This is great!")
 
 ---
 
-## 🌍 Live Deployment
-
-https://sentiment-analysis-14.streamlit.app
-
 ## 📸 Demo Screenshot
 
 ![Sentiment Classifier App](screenshots/sentiment_demo.png)
 
-Start Command:
-
-```bash
-uvicorn app.main:app --host 0.0.0.0 --port 10000
-```
-
 ---
 
 ## 📌 Author
-[https://github.com/chandanabhargav]
----
+
+[https://github.com/chandanabhargav](https://github.com/chandanabhargav)
