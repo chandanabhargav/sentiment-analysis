@@ -101,6 +101,10 @@ classifier("This is great!")
 
 https://sentiment-analysis-14.streamlit.app
 
+## 📸 Demo Screenshot
+
+![Sentiment Classifier App](screenshots/sentiment_demo.png)
+
 Start Command:
 
 ```bash
